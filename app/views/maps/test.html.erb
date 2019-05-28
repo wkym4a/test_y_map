@@ -1,0 +1,25 @@
+
+<%= link_to 'Back', maps_path %>
+
+<div data-controller="moving">
+
+  <p>Google Maps APIを使ったサンプルです。</p>
+
+  <div id="mapwertwerpp" style="width:500px; height:300px"  data-target="moving.map" ></div>
+
+  <form>
+  <p>
+  <input type="button" id="tokyo" value="東京" data-action="click->moving#tokyo">
+  <input type="button" id="shinbashi" value="新橋" data-action="click->moving#sinbasi">
+
+  <input type="button" id="shinagawa" value="品川ええ" data-action="click->moving#sinagawa">
+  <input type="button" id="shinagawa" value="品川" data-action="click->moving#sinagawa">
+
+
+  </p>
+  </form>
+
+</div>
+
+
+<!-- <div id="map" style="width:400px; height:300px"></div> -->

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Maps</h1>
+
+<div data-controller="indexmap">
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maps.each_with_index do |map,i| %>
+      <tr>
+        <td><%= map.name %></td>
+        <td><%= map.address %></td>
+        <td data-target="indexmap.latitude" ><%= map.latitude %></td>
+        <td data-target="indexmap.longitude" ><%= map.longitude %></td>
+        <td><%= link_to 'Show', map %></td>
+        <td><%= link_to 'Edit', edit_map_path(map) %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><button data-action = "click->indexmap#move" data-action-index-num = <%= i.to_s %> >Greet</button></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Map', new_map_path %>
+
+    <div id="mapwertwerpp" style="width:700px; height:500px"  data-target="indexmap.map" ></div>
+
+</div>
