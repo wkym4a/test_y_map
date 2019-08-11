@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+p.yolp-rtlistnum0{
+  display: none;
+}
+p.yolp-sicn, p.yolp-gicn {
+  display: none;
+}

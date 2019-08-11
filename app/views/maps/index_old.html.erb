@@ -4,10 +4,6 @@
 
 <div data-controller="indexmap">
 
-  <input name="maps_json" type="hidden" data-target = "indexmap.maps_data" value= <%= @maps_json %> />
-
-  <input name="arr_json" type="hidden" value=<%= @arr_json %> data-target = "indexmap.maps_data2"/>
-
 <table>
   <thead>
     <tr>
@@ -40,8 +36,6 @@
 <br>
 
 <%= link_to 'New Map', new_map_path %>
-
-<%= link_to 'New Map（別タグ）', new_map_path , :target=>["_blank"] %>
 
     <div id="mapwertwerpp" style="width:700px; height:500px"  data-target="indexmap.map" ></div>
 

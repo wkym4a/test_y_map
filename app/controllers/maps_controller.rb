@@ -1,10 +1,23 @@
 class MapsController < ApplicationController
+
+require 'json'
+
   before_action :set_map, only: [:show, :edit, :update, :destroy]
 
   # GET /maps
   # GET /maps.json
   def index
-    @maps = Map.all
+    # @maps = Map.all
+    # @maps = Map.find_by_sql("select * from maps")
+    @maps = Map.find_by_sql("select id,replace(name,' ','') as name,replace(address,' ','') as address,latitude,longitude,created_at,updated_at from maps")
+
+    # 配列をJsonへ変換する
+    @maps_json = @maps.to_json.html_safe
+
+    @arr = ["りんご", "ゴリラ", "ラッパ", "パイナップル"]
+    # 配列をJsonへ変換する
+    @arr_json = @arr.to_json.html_safe
+
   end
 
   # GET /maps/1
